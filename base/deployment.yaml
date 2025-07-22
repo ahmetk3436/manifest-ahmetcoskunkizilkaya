@@ -12,9 +12,11 @@ spec:
       labels:
         app: sample-app
     spec:
+      imagePullSecrets:
+      - name: harbor-registry-secret
       containers:
       - name: app
-        image: mcr.microsoft.com/dotnet/samples:aspnetapp
+        image: harbor2.ahmetcoskunkizilkaya.com/app-ahmetcoskunkizilkaya/eshoponweb
         ports:
         - containerPort: 8080
         env:
